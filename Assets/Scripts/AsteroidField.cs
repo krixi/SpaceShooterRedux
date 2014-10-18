@@ -8,6 +8,8 @@ public class AsteroidField : MonoBehaviour {
 
 	public Vector2 movementSpeed = new Vector2 (0f, -1f);
 
+	public Vector2 xRange = new Vector2(-6f, 6f);
+
 	public float spawnRate = 1f;
 
 	float lastSpawnTime = 0f;
@@ -30,8 +32,8 @@ public class AsteroidField : MonoBehaviour {
 
 		if (Time.time >= lastSpawnTime + spawnRate)
 		{
-			Vector3 spawnPos = new Vector3 (Random.Range (-6f, 6f), Random.Range (0f, 3f), 0f);
-			GameObject obj = Instantiate (asteroidPrefabs[Random.Range (0, asteroidPrefabs.Length)], spawnPos, Quaternion.identity) as GameObject;
+			Vector3 spawnPos = new Vector3 (Random.Range (-6f, 6f), 0f, 0f);
+			GameObject obj = Instantiate (asteroidPrefabs[Random.Range (0, asteroidPrefabs.Length)], transform.TransformPoint(spawnPos), Quaternion.identity) as GameObject;
 			obj.transform.parent = transform;
 			lastSpawnTime = Time.time;
 		}
