@@ -1,55 +1,40 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Health))]
 public class Enemy : MonoBehaviour {
 
-	public int health = 3;
+	public Health health;
 
-	public string playerTag = "Player";
-
-	public GameObject target;
-
-	public float thrust = 10f;
-
-	void Start() {
-		if (target == null) {
-			target = GameObject.FindWithTag (playerTag);
-		}
-	}
+	public Vector2 velocity = new Vector2 (0f, -1f);
 	
+	public GameObject laserPrefab;
+	float lastFire = 0f;
+	public float fireDelay = 0.25f;
+
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
-		if (target != null) {
-			Vector3 direction = target.transform.position - transform.position;
-			Debug.DrawRay (transform.position, direction);
-			rigidbody2D.AddForce (direction.normalized * thrust);
-			//rigidbody2D.velocity = new Vector2 (direction.x, direction.y);
-		}
+		rigidbody2D.velocity = velocity;
 	}
 
 	void Update ()
 	{
-		if (IsDead)
+		if (health.IsDead)
 		{
 			Destroy (this.gameObject);
 		}
-	}
 
-
-	public void Damage (int amount) {
-		health = Mathf.Max (0, health - amount);
-	}
-
-	public bool IsDead {
-		get {
-			return (health == 0);
+		if (Time.time >= lastFire + fireDelay) {
+			lastFire = Time.time;
+			Quaternion rotation = Quaternion.LookRotation (Vector3.forward, -transform.up);
+			Instantiate (laserPrefab, transform.position, rotation);
 		}
 	}
 
 	void OnCollisionEnter2D (Collision2D col) 
 	{
-		Damage (1);
+		health.Damage (1);
 	}
 
 }

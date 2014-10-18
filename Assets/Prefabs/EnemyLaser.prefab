@@ -12,8 +12,8 @@ GameObject:
   - 50: {fileID: 5000000}
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400000}
-  m_Layer: 8
-  m_Name: laserBlue01
+  m_Layer: 9
+  m_Name: EnemyLaser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,7 +91,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 1ce045ca8b3574d16bce7b8ae8980b9e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db023a7b75c4d4a838bba1fc886fff78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
