@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 50: {fileID: 5000000}
   - 60: {fileID: 6000000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: playerShip
   m_TagString: Player
@@ -91,6 +92,19 @@ MonoBehaviour:
   speed: .200000003
   laserPrefab: {fileID: 100000, guid: 031b79a76d6524fe8b5907d8a8532a60, type: 2}
   fireDelay: .25
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad85892541114d95abd6d5d6ed6a68d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 0}
+  value: -10
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
