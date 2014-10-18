@@ -8,4 +8,9 @@ public class ScoreBoard : MonoBehaviour {
 		get { return _score; }
 		set { _score = value; }
 	}
+
+
+	void OnGUI() {
+		GUILayout.Label (string.Format("Score: {0}", Score));
+	}
 }
