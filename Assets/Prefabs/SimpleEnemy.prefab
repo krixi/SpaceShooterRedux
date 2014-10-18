@@ -9,11 +9,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 50: {fileID: 5000000}
-  - 61: {fileID: 6100000}
+  - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
-  m_Layer: 8
-  m_Name: laserBlue01
+  - 50: {fileID: 5000000}
+  - 60: {fileID: 6000000}
+  - 114: {fileID: 11400004}
+  m_Layer: 9
+  m_Name: SimpleEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -.184341192, y: 6.12780905, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,23 +42,39 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_FixedAngle: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &6100000
-BoxCollider2D:
+--- !u!60 &6000000
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Size: {x: .0900000036, y: .540000021}
-  m_Center: {x: 0, y: 0}
+  m_IsTrigger: 0
+  m_Poly:
+    m_Paths:
+    - - {x: .519999981, y: .0399999991}
+      - {x: .519999981, y: .180000007}
+      - {x: .342662811, y: .180363655}
+      - {x: .180000007, y: .360000014}
+      - {x: .0399999991, y: .419999987}
+      - {x: -.0799999982, y: .419999987}
+      - {x: -.209999993, y: .330000013}
+      - {x: -.349999994, y: .180000007}
+      - {x: -.519999981, y: .172750473}
+      - {x: -.519999981, y: .0512523651}
+      - {x: -.270000011, y: -.419999987}
+      - {x: -.0582581162, y: -.420000076}
+      - {x: -.0711271763, y: -.268872738}
+      - {x: .0734425336, y: -.265250206}
+      - {x: .0592668951, y: -.418715477}
+      - {x: .25999999, y: -.419999987}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65,12 +83,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01cb1a377d07d41c3ae619271b47e720, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ad85892541114d95abd6d5d6ed6a68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
-  timeOut: 5
-  damage: 1
+  board: {fileID: 0}
+  value: 3
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 797be4f60e2ff418889da3be21a00a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 11400004}
+  velocity: {x: 0, y: -1}
+  laserPrefab: {fileID: 100000, guid: 01c24b34e57da48e285f1749f6a38697, type: 2}
+  fireDelay: 1
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f4abec5dbfbf4403be3e98a2de099fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -90,8 +134,8 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 1ce045ca8b3574d16bce7b8ae8980b9e, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 44d224990e200421aac86daecb305cca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

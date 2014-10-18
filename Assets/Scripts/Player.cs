@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Health))]
 public class Player : MonoBehaviour {
+
+	public Health health;
 
 	float horizInput = 0f;
 	float vertInput = 0f;
@@ -13,10 +16,6 @@ public class Player : MonoBehaviour {
 	
 	public float speed = 0.75f;
 
-	//public float thrust = 100f;
-	//public float backwardsModifier = 0.75f;
-	//public float rotationRate = 10f;
-
 	public GameObject laserPrefab;
 	float lastFire = 0f;
 	public float fireDelay = 0.25f;
@@ -24,6 +23,10 @@ public class Player : MonoBehaviour {
 
 	void Update () 
 	{
+		if (health.IsDead) {
+			Destroy (this.gameObject);
+		}
+
 		horizInput = Input.GetAxis ("Horizontal");
 		vertInput = Input.GetAxis ("Vertical");
 
@@ -43,21 +46,8 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-//	void FixedUpdate () 
-//	{
-//
-//		if (vertInput > 0f) {
-//			rigidbody2D.AddForce (transform.up * thrust);
-//		} else if (vertInput < 0f) {
-//			rigidbody2D.AddForce (-transform.up * thrust * backwardsModifier);
-//		}
-//	}
-
 	void OnCollisionEnter2D (Collision2D col) 
 	{
-		if (col.collider.tag == "Meteor") 
-		{
-			Destroy (this.gameObject);
-		}
+		health.Damage (1);
 	}
 }
