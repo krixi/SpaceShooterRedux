@@ -17,9 +17,9 @@ public class Player : MonoBehaviour {
 	public float speed = 0.75f;
 
 	public GameObject laserPrefab;
+	public AudioClip laserSound;
 	float lastFire = 0f;
 	public float fireDelay = 0.25f;
-
 
 	void Update () 
 	{
@@ -42,6 +42,7 @@ public class Player : MonoBehaviour {
 			if (Time.time >= lastFire + fireDelay) {
 				lastFire = Time.time;
 				Instantiate (laserPrefab, transform.position, transform.rotation);
+				audio.PlayOneShot (laserSound);
 			}
 		}
 	}
