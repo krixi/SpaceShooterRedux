@@ -33,6 +33,7 @@ public class LevelController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Time.timeScale = 1f;
 		startTime = Time.time;
 		timerPosition = new Rect (Screen.width - 100f, 0f, 100f, 50f);
 
@@ -72,6 +73,9 @@ public class LevelController : MonoBehaviour {
 			}
 		} else {
 			GUI.Label (timerPosition, string.Format ("You Died!\nTime left: {0:F1}", TimeRemaining));
+			if (GUI.Button (new Rect (Screen.width/2f - 100f/2f, Screen.height/2f, 100f, 50f), "Restart") ) {
+				Application.LoadLevel (Application.loadedLevel);
+			}
 		}
 	}
 }
