@@ -413,6 +413,49 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!1 &1008846438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1008846440}
+  - 114: {fileID: 1008846439}
+  m_Layer: 0
+  m_Name: LevelController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1008846439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1008846438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf217adc329b4b5aa395bc15a043303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelTime: 20
+  playerTag: Player
+  nextLevel: level2
+  delayBeforeNextLevel: 6
+--- !u!4 &1008846440
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1008846438}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!1 &1315080545
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,7 +569,7 @@ MonoBehaviour:
   asteroidPrefabs:
   - {fileID: 100000, guid: dfc0a18e785104c6792823d287be13bf, type: 2}
   - {fileID: 100000, guid: 9831e9424bd994d4288a0d3db12d941a, type: 2}
-  movementSpeed: {x: 0, y: -.00999999978}
+  movementSpeed: {x: 0, y: -1}
   xRange: {x: -6, y: 6}
   spawnRate: 1
 --- !u!4 &1982904658

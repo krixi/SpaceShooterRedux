@@ -20,15 +20,8 @@ public class AsteroidField : MonoBehaviour {
 			Debug.LogError ("You must set some asteroid prefabs");
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		// Move all child objects by the movement speed.
-		for (int i=0; i<transform.childCount; i++)
-		{
-			transform.GetChild(i).Translate (movementSpeed);
-		}
 
+	void Update() {
 
 		if (Time.time >= lastSpawnTime + spawnRate)
 		{
@@ -36,6 +29,8 @@ public class AsteroidField : MonoBehaviour {
 			GameObject obj = Instantiate (asteroidPrefabs[Random.Range (0, asteroidPrefabs.Length)], transform.TransformPoint(spawnPos), Quaternion.identity) as GameObject;
 			obj.transform.parent = transform;
 			lastSpawnTime = Time.time;
+			// Set the movement speed of the asteroid
+			obj.rigidbody2D.velocity = movementSpeed;
 		}
 
 	}
