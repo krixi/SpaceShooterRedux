@@ -6,8 +6,6 @@ public class AsteroidField : MonoBehaviour {
 
 	public GameObject[] asteroidPrefabs;
 
-	public Vector2 movementSpeed = new Vector2 (0f, -1f);
-
 	public Vector2 xRange = new Vector2(-6f, 6f);
 
 	public float spawnRate = 1f;
@@ -29,9 +27,6 @@ public class AsteroidField : MonoBehaviour {
 			GameObject obj = Instantiate (asteroidPrefabs[Random.Range (0, asteroidPrefabs.Length)], transform.TransformPoint(spawnPos), Quaternion.identity) as GameObject;
 			obj.transform.parent = transform;
 			lastSpawnTime = Time.time;
-			// Set the movement speed of the asteroid
-			obj.rigidbody2D.velocity = movementSpeed;
 		}
-
 	}
 }
