@@ -5,6 +5,7 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
 	public Health health;
+	public GUIManager guiManager;
 
 	float horizInput = 0f;
 	float vertInput = 0f;
@@ -20,6 +21,11 @@ public class Player : MonoBehaviour {
 	public AudioClip laserSound;
 	float lastFire = 0f;
 	public float fireDelay = 0.25f;
+
+	void Start ()
+	{
+		guiManager.DrawGUILayout += DrawHealthGUI;
+	}
 
 	void Update () 
 	{
@@ -50,5 +56,10 @@ public class Player : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D col) 
 	{
 		health.Damage (1);
+	}
+
+	void DrawHealthGUI () 
+	{
+		GUILayout.Label (string.Format ("Player health: {0}", health.health));
 	}
 }

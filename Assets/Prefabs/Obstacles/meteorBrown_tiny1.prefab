@@ -10,12 +10,12 @@ GameObject:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
   - 114: {fileID: 11400000}
-  - 50: {fileID: 5000000}
   - 60: {fileID: 6000000}
-  - 114: {fileID: 11400004}
-  m_Layer: 8
-  m_Name: playerShip
-  m_TagString: Player
+  - 50: {fileID: 5000000}
+  - 114: {fileID: 11400002}
+  m_Layer: 0
+  m_Name: meteorBrown_tiny1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.60281277, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -41,9 +41,9 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_FixedAngle: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -58,22 +58,12 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_Poly:
     m_Paths:
-    - - {x: .495000005, y: .125}
-      - {x: .275000006, y: .104999997}
-      - {x: .125, y: .234999999}
-      - {x: .135000005, y: .375}
-      - {x: -.104999997, y: .375}
-      - {x: -.144999996, y: .125}
-      - {x: -.264999986, y: .0649999976}
-      - {x: -.495000005, y: .0949999988}
-      - {x: -.495000005, y: -.245000005}
-      - {x: -.425000012, y: -.284999996}
-      - {x: -.144999996, y: -.294999987}
-      - {x: -.0949999988, y: -.375}
-      - {x: .104999997, y: -.375}
-      - {x: .254999995, y: -.284999996}
-      - {x: .455000013, y: -.264999986}
-      - {x: .495000005, y: -.254999995}
+    - - {x: -.0599999987, y: .0900000036}
+      - {x: -.0900000036, y: .0299999993}
+      - {x: -.0900000036, y: -.0500000007}
+      - {x: -.0500000007, y: -.0900000036}
+      - {x: .0900000036, y: -.0900000036}
+      - {x: .0900000036, y: .0900000036}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -82,20 +72,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d6a955c8197e42fca3be3ca6610a3f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ad85892541114d95abd6d5d6ed6a68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 11400004}
-  guiManager: {fileID: 0}
-  leftBound: -6
-  rightBound: 6
-  topBound: 3
-  bottomBound: -3
-  speed: .200000003
-  laserPrefab: {fileID: 100000, guid: 031b79a76d6524fe8b5907d8a8532a60, type: 2}
-  laserSound: {fileID: 8300000, guid: 610a3beee4ed44b989b831f5a2bb73fc, type: 3}
-  fireDelay: .25
---- !u!114 &11400004
+  board: {fileID: 0}
+  value: 1
+--- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -103,10 +85,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f4abec5dbfbf4403be3e98a2de099fc, type: 3}
+  m_Script: {fileID: 11500000, guid: 47bde7cae5e14437880ab647a6bc6683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  movementSpeed: {x: 0, y: -1}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -127,7 +109,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ef98a27a241c246f5bc3d871bfc5fd9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bcc002017ab3b4f33a1ce250a45d5e5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

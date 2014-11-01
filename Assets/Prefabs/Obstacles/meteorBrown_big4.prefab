@@ -10,11 +10,12 @@ GameObject:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
   - 50: {fileID: 5000000}
-  - 60: {fileID: 6000000}
   - 114: {fileID: 11400000}
+  - 60: {fileID: 6000000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
-  m_Name: meteorBrown_big2
-  m_TagString: Meteor
+  m_Name: meteorBrown_big4
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,19 +58,26 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_Poly:
     m_Paths:
-    - - {x: .405000001, y: -.25}
-      - {x: .504999995, y: -.0399999991}
-      - {x: .504999995, y: .0500000007}
-      - {x: .254999995, y: .419999987}
-      - {x: -.344999999, y: .419999987}
-      - {x: -.36500001, y: .409999996}
-      - {x: -.504999995, y: .0500000007}
-      - {x: -.504999995, y: -.150000006}
-      - {x: -.245000005, y: -.419999987}
-      - {x: -.165000007, y: -.419999987}
-      - {x: .115000002, y: -.319999993}
-      - {x: .245000005, y: -.370000005}
-      - {x: .395000011, y: -.330000013}
+    - - {x: .430000007, y: -.129999995}
+      - {x: .49000001, y: .0399999991}
+      - {x: .49000001, y: .150000006}
+      - {x: .419999987, y: .230000004}
+      - {x: .340000004, y: .319999993}
+      - {x: .200000003, y: .479999989}
+      - {x: .0700000003, y: .479999989}
+      - {x: -.0199999996, y: .449999988}
+      - {x: -.360000014, y: .360000014}
+      - {x: -.379999995, y: .330000013}
+      - {x: -.479999989, y: .00999999978}
+      - {x: -.49000001, y: -.0199999996}
+      - {x: -.49000001, y: -.150000006}
+      - {x: -.379999995, y: -.289999992}
+      - {x: -.289999992, y: -.389999986}
+      - {x: -.209999993, y: -.479999989}
+      - {x: -.00999999978, y: -.479999989}
+      - {x: .0799999982, y: -.469999999}
+      - {x: .319999993, y: -.449999988}
+      - {x: .349999994, y: -.400000006}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,6 +91,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   board: {fileID: 0}
   value: 1
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47bde7cae5e14437880ab647a6bc6683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: {x: 0, y: -.25}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -103,7 +123,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4f236d93024ba4f06bb773ccf3fa4a1f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2bb18c4f334d441d28f1d357876eb607, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

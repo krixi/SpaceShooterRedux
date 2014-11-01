@@ -6,8 +6,6 @@ public class AsteroidField : MonoBehaviour {
 
 	public GameObject[] asteroidPrefabs;
 
-	public Vector2 movementSpeed = new Vector2 (0f, -1f);
-
 	public Vector2 xRange = new Vector2(-6f, 6f);
 
 	public float spawnRate = 1f;
@@ -20,15 +18,8 @@ public class AsteroidField : MonoBehaviour {
 			Debug.LogError ("You must set some asteroid prefabs");
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		// Move all child objects by the movement speed.
-		for (int i=0; i<transform.childCount; i++)
-		{
-			transform.GetChild(i).Translate (movementSpeed);
-		}
 
+	void Update() {
 
 		if (Time.time >= lastSpawnTime + spawnRate)
 		{
@@ -37,6 +28,5 @@ public class AsteroidField : MonoBehaviour {
 			obj.transform.parent = transform;
 			lastSpawnTime = Time.time;
 		}
-
 	}
 }
