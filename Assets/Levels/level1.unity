@@ -621,6 +621,14 @@ MonoBehaviour:
   asteroidPrefabs:
   - {fileID: 100000, guid: dfc0a18e785104c6792823d287be13bf, type: 2}
   - {fileID: 100000, guid: 9831e9424bd994d4288a0d3db12d941a, type: 2}
+  - {fileID: 100000, guid: 8ba1c091ecba1431a901f31251b7ba1a, type: 2}
+  - {fileID: 100000, guid: 97a9ec3a3df20452e92248277f6b4c41, type: 2}
+  - {fileID: 100000, guid: d8b11b6ddd623407e8f31be6aa4781fc, type: 2}
+  - {fileID: 100000, guid: 262c09784361d49839fca208ac6c4c87, type: 2}
+  - {fileID: 100000, guid: b305821e94e9c44b4bf40326f9a7f0f2, type: 2}
+  - {fileID: 100000, guid: afc62b7663d164826b2694ee66527d7c, type: 2}
+  - {fileID: 100000, guid: 519d75b3c24da4b5aa79ea7e9b1cd8c1, type: 2}
+  - {fileID: 100000, guid: 454e3e95c650b42c29c5d2d85b8b12ca, type: 2}
   movementSpeed: {x: 0, y: -1}
   xRange: {x: -6, y: 6}
   spawnRate: 1

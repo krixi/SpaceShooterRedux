@@ -9,12 +9,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 50: {fileID: 5000000}
-  - 60: {fileID: 6000000}
   - 114: {fileID: 11400000}
-  m_Layer: 11
-  m_Name: meteorBrown_big2
-  m_TagString: Meteor
+  - 60: {fileID: 6000000}
+  - 50: {fileID: 5000000}
+  m_Layer: 0
+  m_Name: meteorBrown_tiny1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -57,19 +57,12 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_Poly:
     m_Paths:
-    - - {x: .405000001, y: -.25}
-      - {x: .504999995, y: -.0399999991}
-      - {x: .504999995, y: .0500000007}
-      - {x: .254999995, y: .419999987}
-      - {x: -.344999999, y: .419999987}
-      - {x: -.36500001, y: .409999996}
-      - {x: -.504999995, y: .0500000007}
-      - {x: -.504999995, y: -.150000006}
-      - {x: -.245000005, y: -.419999987}
-      - {x: -.165000007, y: -.419999987}
-      - {x: .115000002, y: -.319999993}
-      - {x: .245000005, y: -.370000005}
-      - {x: .395000011, y: -.330000013}
+    - - {x: -.0599999987, y: .0900000036}
+      - {x: -.0900000036, y: .0299999993}
+      - {x: -.0900000036, y: -.0500000007}
+      - {x: -.0500000007, y: -.0900000036}
+      - {x: .0900000036, y: -.0900000036}
+      - {x: .0900000036, y: .0900000036}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,7 +96,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4f236d93024ba4f06bb773ccf3fa4a1f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bcc002017ab3b4f33a1ce250a45d5e5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
