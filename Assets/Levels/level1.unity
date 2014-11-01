@@ -123,7 +123,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -201,6 +201,10 @@ Prefab:
       propertyPath: laserSound
       value: 
       objectReference: {fileID: 8300000, guid: 610a3beee4ed44b989b831f5a2bb73fc, type: 3}
+    - target: {fileID: 11400000, guid: 77fa0a5a31e84452f8e7465fe6665be3, type: 2}
+      propertyPath: guiManager
+      value: 
+      objectReference: {fileID: 924092489}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77fa0a5a31e84452f8e7465fe6665be3, type: 2}
   m_RootGameObject: {fileID: 804194297}
@@ -276,6 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 804194304}
+  guiManager: {fileID: 924092489}
   leftBound: -6
   rightBound: 6
   topBound: 3
@@ -413,6 +418,51 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!1 &924092488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 924092490}
+  - 114: {fileID: 924092489}
+  m_Layer: 0
+  m_Name: GUIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &924092489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 924092488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15b87623496624496b7da150ec890915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guiArea:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 200
+    height: 200
+--- !u!4 &924092490
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 924092488}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
 --- !u!1 &1008846438
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,6 +494,7 @@ MonoBehaviour:
   playerTag: Player
   nextLevel: level2
   delayBeforeNextLevel: 6
+  guiManager: {fileID: 924092489}
 --- !u!4 &1008846440
 Transform:
   m_ObjectHideFlags: 0
@@ -526,6 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c503f1c748f042d28cec053f8370589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  guiManager: {fileID: 924092489}
   _score: 0
 --- !u!4 &1665295679
 Transform:
