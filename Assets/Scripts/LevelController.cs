@@ -11,8 +11,9 @@ public class LevelController : MonoBehaviour {
 
 	public float delayBeforeNextLevel = 6f;
 
-	public GUIManager guiManager;
-
+	public bool LevelComplete {
+		get { return levelComplete; }
+	}
 	bool levelComplete = false;
 
 	protected Player player;
@@ -35,7 +36,6 @@ public class LevelController : MonoBehaviour {
 	void Start () {
 		Time.timeScale = 1f;
 		startTime = Time.time;
-		guiManager.DrawGUILayout += DrawLevelGUI;
 
 		// Get the player.
 		GameObject playerObj = GameObject.FindGameObjectWithTag(playerTag);
@@ -58,46 +58,6 @@ public class LevelController : MonoBehaviour {
 				Time.timeScale = 0f;
 				levelComplete = true;
 			}
-		}
-	}
-
-	void OnGUI ()
-	{
-		if (player != null) 
-		{
-			if (levelComplete) 
-			{
-				if (GUI.Button (new Rect (Screen.width/2f - 100f/2f, Screen.height/2f, 100f, 50f), "Next Level") ) 
-				{
-					Application.LoadLevel (nextLevel);
-				}
-			} 
-		} 
-		else 
-		{
-			if (GUI.Button (new Rect (Screen.width/2f - 100f/2f, Screen.height/2f, 100f, 50f), "Restart") ) 
-			{
-				Application.LoadLevel (Application.loadedLevel);
-			}
-		}
-	}
-	
-	void DrawLevelGUI() 
-	{
-		if (player != null) 
-		{
-			if (levelComplete) 
-			{
-				GUILayout.Label ("Level Complete!");
-			} 
-			else 
-			{
-				GUILayout.Label (string.Format ("Time left: {0:F1}", TimeRemaining));
-			}
-		} 
-		else 
-		{
-			GUILayout.Label (string.Format ("You Died!\nTime left: {0:F1}", TimeRemaining));
 		}
 	}
 }
