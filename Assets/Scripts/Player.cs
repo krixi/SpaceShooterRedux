@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Health))]
 public class Player : MonoBehaviour {
@@ -15,11 +16,13 @@ public class Player : MonoBehaviour {
 	public float bottomBound = -3f;
 	
 	public float speed = 0.75f;
+	
+	//public Weapon[] weapons;
+	public List<Weapon> weapons = new List<Weapon>();
 
-	public GameObject laserPrefab;
-	public AudioClip laserSound;
-	float lastFire = 0f;
-	public float fireDelay = 0.25f;
+	private int currentWeapon = 0;
+
+	public const int MAX_WEAPONS = 9;
 
 	void Update () 
 	{
@@ -39,11 +42,49 @@ public class Player : MonoBehaviour {
 		transform.position = new Vector3 (xPos, yPos, transform.position.z);
 
 		if (Input.GetButton ("Fire1")) {
-			if (Time.time >= lastFire + fireDelay) {
-				lastFire = Time.time;
-				Instantiate (laserPrefab, transform.position, transform.rotation);
-				audio.PlayOneShot (laserSound);
+			if ( currentWeapon >= 0 && currentWeapon < weapons.Count ) {
+				weapons[ currentWeapon ].Fire();
 			}
+		}
+
+		// handle input on number keys to switch weapons
+		for( int i=0; i < MAX_WEAPONS; i++) {
+			if (Input.GetKeyDown(string.Format("{0}", i+1)) || Input.GetKeyDown(string.Format("[{0}]", i+1)))
+			{
+				SetWeapon( i );
+				break;
+			}
+		}
+	}
+
+	public void SetWeapon( int idx ) 
+	{
+		if ( idx >= 0 && idx < weapons.Count ) {
+			currentWeapon = idx;
+			for( int i=0; i < MAX_WEAPONS && i < weapons.Count; i++) {
+				if ( i == currentWeapon ) {
+					weapons[i].gameObject.SetActive( true );
+				} else {
+					weapons[i].gameObject.SetActive( false );
+				}
+			}
+		}
+	}
+
+	public void AddWeapon( Weapon w )
+	{
+		weapons.Add( w );
+		w.transform.parent = transform;
+		w.transform.localPosition = Vector3.zero;
+		SetWeapon( weapons.Count - 1 );
+	}
+
+	public void HandlePickupItem( GameObject item )
+	{
+		Weapon w = item.GetComponent<Weapon>();
+		if (w != null)
+		{
+			AddWeapon( w );
 		}
 	}
 }
