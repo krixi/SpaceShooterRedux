@@ -810,7 +810,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1234569811}
   - 212: {fileID: 1234569812}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: gun02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1077,7 +1077,7 @@ GameObject:
   - 4: {fileID: 1836988252}
   - 61: {fileID: 1836988251}
   - 114: {fileID: 1836988250}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: DualLaserPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1168,15 +1168,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6d0e29ef1e1ed4220a92c5c091ae7bea, type: 2}
       propertyPath: m_Layer
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 6d0e29ef1e1ed4220a92c5c091ae7bea, type: 2}
       propertyPath: m_Layer
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 6d0e29ef1e1ed4220a92c5c091ae7bea, type: 2}
       propertyPath: m_Layer
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d0e29ef1e1ed4220a92c5c091ae7bea, type: 2}
@@ -1244,7 +1244,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1999842810}
   - 212: {fileID: 1999842811}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: gun02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
